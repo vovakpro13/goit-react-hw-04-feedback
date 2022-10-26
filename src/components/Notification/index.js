@@ -1,18 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
 import propsTypes from 'prop-types';
 
 import styles from 'components/Notification/style.module.css';
 
-class Notification extends Component {
-  render() {
-    const { message } = this.props;
-
-    return <span className={styles.message}>{message}</span>;
-  }
-}
+const Notification = ({ message }) => {
+  return <p className={styles.message}>{message}</p>;
+};
 
 Notification.propTypes = {
-  message: propsTypes.string,
+  message: propsTypes.string.isRequired,
 };
 
 export default Notification;
